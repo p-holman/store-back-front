@@ -35,7 +35,7 @@ export default function RootLayout({
           
           .main-content {
             flex: 1;
-            padding: 3rem 0.5rem 3rem 0.5rem;
+            padding: 3rem 0rem 3rem 0rem;
           }
           
         `}</style>

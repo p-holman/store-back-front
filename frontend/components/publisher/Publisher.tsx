@@ -25,6 +25,27 @@ const formSchema = z.object({
   title: z.string().min(4, {
     message: "El título debe tener al menos 4 letras",
   }),
+  
+  category: z.enum([
+    "Comunidad",
+    "Ropa",
+    "Electrodomésticos",
+    "Juguetes",
+    "Mascotas",
+    "Relojes",
+    "Electrónica",
+    "Alimentos",
+    "Herramientas",
+    "Negocios",
+    "Casa",
+    "Vehículos",
+    "Flores",
+    "Deportes",
+    "Muebles",
+    "Regalos",
+    "Otros",
+  ])
+  ,
   description: z.string().min(4, { message: "Debe agregar una descripción" }),
   image: z.instanceof(File).optional(),
   price: z.string().regex(/^[1-9]\d*$/, {
@@ -121,6 +142,23 @@ export function Publisher() {
               </FormItem>
             )}
           />
+          {/* Categoria */}
+          <FormField
+            control={form.control}
+            name="category"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Categoría</FormLabel>
+                <FormControl>
+                  <Input placeholder="" {...field} />
+                </FormControl>
+
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+
           <FormField
             control={form.control}
             name="description"

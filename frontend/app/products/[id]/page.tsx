@@ -68,24 +68,9 @@ export default async function ProductPage({ params }: Props) {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-4">
         <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {/* Imagen del producto */}
-          <div className="space-y-4">
-            <Card className="overflow-hidden">
-              <CardContent className="p-0">
-                <Image
-                  src={product.imageUrl || "/placeholder.svg"}
-                  alt={product.title}
-                  width={600}
-                  height={600}
-                  className="w-full h-auto object-cover"
-                  priority
-                />
-              </CardContent>
-            </Card>
-          </div>
-
+      
           {/* Información del producto */}
           <div className="space-y-6">
             {/* Categoría */}
@@ -135,6 +120,22 @@ export default async function ProductPage({ params }: Props) {
                 </Badge>
               )}
             </div>
+
+            {/* Imagen del producto */}
+          <div className="space-y-4">
+            <Card className="overflow-hidden">
+              <CardContent className="p-0">
+                <Image
+                  src={product.imageUrl || "/placeholder.svg"}
+                  alt={product.title}
+                  width={600}
+                  height={600}
+                  className="w-full h-auto object-cover"
+                  priority
+                />
+              </CardContent>
+            </Card>
+          </div>
 
             {/* Descripción */}
             <div className="space-y-3">

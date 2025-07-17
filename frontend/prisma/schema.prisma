@@ -93,7 +93,7 @@ model Product {
   price       Int
   salePrice   Int?
   stock       Int     @default(1)
-  category    String?
+  category    String
   userId      String
 
   createdAt DateTime @default(now())
